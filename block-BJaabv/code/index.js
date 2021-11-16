@@ -58,17 +58,14 @@ function fahrenheitToCelsius(tempFahren) {
   * [ ] If the value of n is below 0 return "The number below 1 is not allowed"
 */
 
-function pow(n,x) {
-  if(n<=0){
-    return "The number below 1 is not allowed"
-  } else{
-    while(n>1){
-      x = x*x;
-      n--;
-    }
-    return x;
+function pow(x,n){
+  if (n < 0){
+    return "The number below 1 is not allowed";
+  } else {
+    return x ** n;
   }
 }
+
 
 // Test
 pow(3, 2); // 9
@@ -81,9 +78,23 @@ pow(-31, 2); // "The number below 1 is not allowed"
 and return sum or product of 1,…,n. If user enters any other value than `sum` or `product` alert `Not a valid Input`.
 */
 
-function sumOrProductOfN() {
-  // Your code goes here
-}
+function sumOrProductOfN(num, operation) {
+  if(operation == "sum"){
+    let sum = 0;
+    for(let i=1;i<=num;i++){
+      sum += i;
+    }
+    return sum;
+  } else if(operation == "product"){
+    let product = 1;
+    for(let i=1;i<=num;i++){
+      product *= i;
+    }
+    return product;
+  } else {
+    alert("Not a valid input");
+  }
+};
 
 sumOrProductOfN(4, 'sum'); // 10
 sumOrProductOfN(4, 'product'); // 24
@@ -105,15 +116,24 @@ function sumOfN(n) {
 /*
 7. 🎖Modify the previous program such that only multiples of 5 or 7 are considered in the sum, e.g. n = 20 (5,7,10,14,15,20) 71
 */
-
+function sumOfNum(n) {
+  let sum = 0;
+  for(let i=1;i<=n;i++){
+    if(i%5 == 0 || i%7 == 0){
+      sum += i;
+    }
+  }
+  return sum;
+};
 // Your code goes here
 
 /*
 8. 🎖Write a function `min` that takes two arguments and returns their minimum.
 */
 
-function min() {
-  // Your code goes here
+function min(a,b) {
+  if(a<b) return a;
+  if(a>b) return b;
 }
 
 min(0, 10);
