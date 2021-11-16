@@ -8,9 +8,11 @@
   * [ ] Add an additional argument to the function that takes the conversion rate of human to dog years.
 */
 
-function calculateDogAge() {
-  // Your code goes here
-}
+function calculateDogAge(puppyAge, coversionRate = 7) {
+  let dogYears = puppyAge*coversionRate;
+  return dogYears;
+};
+calculateDogAge(3);
 
 /*
 2. 🎖Write a function named calculateMoviesToWatch that:
@@ -19,9 +21,12 @@ function calculateDogAge() {
   * [ ] Return the total number of movie you will watch.
 */
 
-function calculateMoviesToWatch() {
-  // Your code goes here
-}
+function calculateMoviesToWatch(age, moviesPerWeek) {
+  const maxAge = 80;
+  let ageLeft = maxAge - age;
+  let moviesLeft = ageLeft*12*4*moviesPerWeek;
+  return moviesLeft;
+};
 
 /*
 3. 🎖Create a function called celsiusToFahrenheit:
@@ -29,9 +34,10 @@ function calculateMoviesToWatch() {
   * [ ] Convert it to fahrenheit and return "NN°F is NN°C"
 */
 
-function celsiusToFahrenheit() {
-  // Your code goes here
-}
+function celsiusToFahrenheit(celsiusTemp) {
+  let fahrenTemp = (celsiusTemp*9/5) + 32;
+  return fahrenTemp;
+};
 
 /*
 4. 🎖Create a function called fahrenheitToCelsius:
@@ -39,9 +45,10 @@ function celsiusToFahrenheit() {
   * [ ] Convert it to celsius and return "NN°F is NN°C"
 */
 
-function celsiusToFahrenheit() {
-  // Your code goes here
-}
+function fahrenheitToCelsius(tempFahren) {
+  let tempCelcius = (tempFahren - 32)*5/9;
+  return tempCelcius;
+};
 
 /*
 5. 🎖 Write a function pow(n, x) that returns x in power n.
@@ -51,8 +58,16 @@ function celsiusToFahrenheit() {
   * [ ] If the value of n is below 0 return "The number below 1 is not allowed"
 */
 
-function pow() {
-  // Your code goes here
+function pow(n,x) {
+  if(n<=0){
+    return "The number below 1 is not allowed"
+  } else{
+    while(n>1){
+      x = x*x;
+      n--;
+    }
+    return x;
+  }
 }
 
 // Test
@@ -78,9 +93,14 @@ sumOrProductOfN(4, 'hello'); // alert "Not a valid Input"
 6. 🎖Write a program that accepts a number n using argument and return the sum of the numbers 1 to n
 */
 
-function sumOfN() {
-  // Your code goes here
-}
+function sumOfN(n) {
+  let sum = 0
+  while(n>=0){
+    sum = sum+n;
+    n--;
+  }
+  return sum;
+};
 
 /*
 7. 🎖Modify the previous program such that only multiples of 5 or 7 are considered in the sum, e.g. n = 20 (5,7,10,14,15,20) 71
@@ -103,6 +123,6 @@ min(0, -10);
 9. 🎖Write a JavaScript function which accepts an argument and returns the type of the value.
 */
 
-function typeCheck() {
-  // Your code goes here
+function typeCheck(argu) {
+  return typeof(argu);
 }
